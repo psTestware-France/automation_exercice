@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play with style</title>
+  <style>
+    #container {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 54 0px;
+      height: 200px;
+    }
+
+    .carousel {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+      /* Ajoute une marge entre les carrousels */
+    }
+
+    .carousel-container {
+      width: 220px;
+      overflow: hidden;
+      margin: auto;
+    }
+
+    .image-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+
+    }
+
+    .carousel-image {
+      width: 100%;
+      /* Assure que les images remplissent le conteneur */
+      height: 240px;
+    }
+
+
+
+    button {
+      background-color: #007bff;
+      width: 100px;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .prev-btn,
+    .next-btn {
+      cursor: pointer;
+      font-size: 24px;
+      padding: 0;
+      margin: 10px 10px;
+      width: 30px;
+    }
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 1%;
+      top: 1%;
+      width: 98%;
+      height: 98%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 8px;
+    }
+
+    #modal-content {
+      background-color: #fff;
+      margin: auto;
+      /* Ajuste la marge pour centrer horizontalement */
+      padding: 20px;
+      bottom: 0;
+      border-radius: 4px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    #child-1 {
+      background-color: rgba(40, 40, 40, 0.7);
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      color: #F8F8F8;
+      text-align: justify;
+    }
+
+    #child-2 {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="child-1">
+      <h1>Choisis ton style !</h1>
+      <p>Exercice 1 : <br />Dans un script cypress, faire des assertions pour vérifier que :
+      <ul>
+        <li>le caraco est visible > OK</li>
+        <li>le pantalon large beige n'est pas visible > KO</li>
+        <li>le pantalon large beige est caché > KO</li>
+      </ul>
+      </p>
+      <p>Exercice 2 : <br />Dans un script cypress, faire des assertions pour vérifier que :
+      <ul>
+        <li>la modale n'est pas visible si on ne clique pas sur le bouton 'Envoyer' > OK</li>
+        <li>la modale a un fond blanc > OK</li>
+        <li>la modale est visible après avoir cliqué sur le bouton 'Envoyer' > OK</li>
+        <li>la modale disparait 5 secondes après avoir cliqué sur le bouton 'Envoyer' > OK</li>
+      </ul>
+      </p>
+    </div>
+    <div id="child-2">
+      <div class="carousel" id="carrousel-1">
+        <button class="prev-btn">&lt;</button>
+        <div class="carousel-container">
+          <div class="image-container">
+            <img class="carousel-image" data-testid="caraco_imprime-22357" src="../img/caraco_imprime.jpg"
+              alt="caraco_imprime">
+            <img class="carousel-image" data-testid="tshirt_boxy_bleuemarine-22425"
+              src="../img/tshirt_boxy_bleuemarine.jpg" alt="tshirt_boxy_bleuemarine">
+            <img class="carousel-image" data-testid="tshirt_boxy_rayure-22902" src="../img/tshirt_boxy_rayure.jpg"
+              alt="tshirt_boxy_rayure">
+            <img class="carousel-image" data-testid="tshirt_manche_longue_anthracite-22190"
+              src="../img/tshirt_manche_longue_anthracite.jpg" alt="tshirt_manche_longue_anthracite">
+          </div>
+        </div>
+        <button class="next-btn">&gt;</button>
+      </div>
+
+      <div class="carousel" id="carrousel-2">
+        <button class="prev-btn">&lt;</button>
+        <div class="carousel-container">
+          <div class="image-container">
+            <img class="carousel-image" data-testid="pantalon_droit_jean-26357" src="../img/pantalon_droit_jean.jpg"
+              alt="pantalon_droit_jean">
+            <img class="carousel-image" data-testid="jupe_jean-26576" src="../img/jupe_jean.jpg" alt="jupe_jean">
+            <img class="carousel-image" data-testid="pantalon_flare_fuchsia-26119"
+              src="../img/pantalon_flare_fuchsia.jpg" alt="pantalon_flare_fuchsia">
+            <img class="carousel-image" data-testid="pantalon_large_beige-26748" src="../img/pantalon_large_beige.jpg"
+              alt="pantalon_large_beige">
+          </div>
+        </div>
+        <button class="next-btn">&gt;</button>
+      </div>
+
+      <div class="carousel" id="carrousel-3">
+        <button class="prev-btn">&lt;</button>
+        <div class="carousel-container">
+          <div class="image-container">
+            <img class="carousel-image" data-testid="ballerine_bleuciel-20287" src="../img/ballerine_bleuciel.jpg"
+              alt="ballerine_bleuciel">
+            <img class="carousel-image" data-testid="basket_blanche-20926" src="../img/basket_blanche.jpg"
+              alt="basket_blanche">
+            <img class="carousel-image" data-testid="basket_doree-20005" src="../img/basket_doree.jpg"
+              alt="basket_doree">
+            <img class="carousel-image" data-testid="sandale_noir-20742" src="../img/sandale_noir.jpg"
+              alt="sandale_noir">
+          </div>
+        </div>
+        <button class="next-btn">&gt;</button>
+      </div>
+
+      <div><button type="submit" data-cy="submit" onclick="showModal()">Envoyer</button></div>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <div id="modal-content">
+      <p>Super look !</p>
+    </div>
+  </div>
+  <script>
+    function setupCarousel(carouselId) {
+      const carousel = document.getElementById(carouselId);
+      const prevBtn = carousel.querySelector('.prev-btn');
+      const nextBtn = carousel.querySelector('.next-btn');
+      const imageContainer = carousel.querySelector('.image-container');
+
+      let currentIndex = 0;
+
+      function showImage(index) {
+        const imageWidth = 220; // Ajustez la largeur de l'image en fonction de votre besoin
+        const newPosition = -index * imageWidth;
+        imageContainer.style.transform = `translateX(${newPosition}px)`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + numImages) % numImages;
+        showImage(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % numImages;
+        showImage(currentIndex);
+      });
+
+      const numImages = imageContainer.children.length;
+    }
+
+    // Initialiser chaque carrousel
+    setupCarousel('carrousel-1');
+    setupCarousel('carrousel-2');
+    setupCarousel('carrousel-3');
+
+    function showModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "flex";
+      setTimeout(function () {
+        modal.style.display = "none";
+      }, 5000);
+      // return;
+    }
+  </script>
+
+</body>
+
+</html>

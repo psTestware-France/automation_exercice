@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Où est charlie ?</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Utilisation de la police Roboto pour le texte principal */
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            background-image: url('../img/fond_charlie.jpg');
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            color: #F8F8F8;
+        }
+
+        #container {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 620px;
+            height: 200px;
+        }
+
+
+        #child-1 {
+            background-color: rgba(40, 40, 40, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #F8F8F8;
+            text-align: justify;
+        }
+
+        #child-2 {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="child-1">
+            <h1>Où est Charlie ?</h1>
+            <p>Exercice 1 : <br />Dans un script cypress, faire des assertions pour vérifier dans le texte que :
+            <ul>
+                <li>Le texte contient 'Charlie' > Test OK</li>
+                <li>Le texte est 'Charlie' > Test KO</li>
+                <li>Le texte contient le 'Fiona, la musicienne' > Test OK</li>
+				<li>Le texte commence par 'Charlie' > Test OK</li>
+				<li>Le texte fini par 'partager > Test OK</li>
+            </ul>
+            </p>
+        </div>
+        <div id="child-2">Charlie se tenait au milieu d'une place animée, son bonnet rayé rouge et blanc le rendant facilement
+            reconnaissable. Ses amis, des personnages tout aussi excentriques, l'entouraient avec une joyeuse
+            effervescence. Il y avait Wanda, avec son écharpe violette toujours enroulée autour du cou, et Bob,
+            l'aventurier casse-cou, portant son sac à dos rempli de mystères. Fiona, la musicienne aux cheveux
+            ébouriffés, jouait une mélodie entraînante qui attirait l'attention de tous.<br /><br />L'atmosphère était
+            électrique, les rires de Carmen, l'acrobate, résonnaient dans l'air. Oliver, le scientifique curieux, était
+            absorbé dans ses expériences farfelues, tandis que Holly, la photographe passionnée, capturait chaque
+            instant avec son appareil photo vintage. Près d'eux, Jack, le farceur de la bande, préparait déjà sa
+            prochaine blague.<br /><br />Les rues étaient pleines de gens qui observaient cette troupe éclectique avec
+            émerveillement. Chacun de ses amis était unique, apportant sa propre saveur à cette aventure quotidienne.
+            Les passants s'arrêtaient pour prendre des photos, cherchant à immortaliser l'instant où ils avaient croisé
+            le chemin de cette bande attachante.<br /><br />Au centre de cette joyeuse cacophonie, il continuait de
+            sourire derrière ses lunettes rondes. Ses yeux pétillaient d'une lueur de camaraderie, et il était évident
+            que, malgré leur diversité, ces amis partageaient des liens indéfectibles. Les aventures de Charlie et ses
+            amis semblaient infinies, tout comme l'amitié qui les unissait, une amitié qui faisait de chaque journée une
+            nouvelle occasion de rire, de découvrir et de partager</div>
+    </div>
+</body>
+
+</html>

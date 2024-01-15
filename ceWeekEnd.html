@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Choix de Destination</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Utilisation de la police Roboto pour le texte principal */
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            background-image: url('https://img.yellohvillage.fr/var/plain_site/storage/images/site_marchand/choisissez_votre_camping/par_ville/la_tranche_sur_mer/3264896-1-fre-FR/la_tranche_sur_mer.jpg');
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #header {
+            width: 600px;
+            height: 300px;
+            display: flex;
+
+            /* Utiliser Flexbox pour la disposition */
+            flex-direction: column;
+            /* Afficher les éléments en colonne */
+            justify-content: center;
+            /* Centrer verticalement */
+            text-align: left;
+            /* Aligner le texte à gauche */
+            color: #fff;
+            padding-top: 50px;
+            margin: 0 auto;
+            /* Centrer horizontalement */
+        }
+
+        #header h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        #container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 200px;
+        }
+       
+
+        #child-2 {
+            background-color: rgba(40, 40, 40, 0.7);
+            color:#FFF;
+            padding:10px;
+            border-radius: 8px;
+            margin-top:20px;
+        }
+
+        #destination-form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 450px;
+            margin: 0 auto;
+        }
+
+        .input-container {
+            text-align: right;
+            /* Aligner le texte à droite pour les champs de saisie et les éléments de sélection */
+        }
+
+        #destination-form label {
+            text-align: left;
+            /* Aligner les labels à gauche */
+            display: inline-block;
+            /* Faire en sorte que les labels occupent la largeur nécessaire */
+            width: 100px;
+            /* Définir une largeur fixe pour les labels (ajustez selon vos besoins) */
+            margin-right: 20px;
+            /* Ajouter une marge à droite pour séparer les labels des champs */
+        }
+
+        /* Styles pour les champs de saisie */
+        .input-container input[type="text"],
+        .input-container input[type="email"],
+        .input-container input[type="tel"] {
+            width: 280px;
+            /* Définir la largeur à 100% pour remplir la largeur du conteneur */
+            padding: 10px;
+            /* Ajouter un espace intérieur pour une apparence améliorée */
+            margin-bottom: 10px;
+            /* Ajouter de l'espace entre les champs */
+            border: 1px solid #ccc;
+            /* Ajouter une bordure pour délimiter les champs */
+            border-radius: 5px;
+            /* Arrondir les coins */
+            font-size: 16px;
+            /* Définir la taille de police */
+            text-align: right;
+        }
+
+        .input-container select {
+            width: 300px;
+            /* Définir la largeur à 100% pour remplir la largeur du conteneur */
+            padding: 10px;
+            /* Ajouter un espace intérieur pour une apparence améliorée */
+            margin-bottom: 10px;
+            /* Ajouter de l'espace entre les champs */
+            border: 1px solid #ccc;
+            /* Ajouter une bordure pour délimiter les champs */
+            border-radius: 5px;
+            /* Arrondir les coins */
+            font-size: 16px;
+            /* Définir la taille de police */
+            text-align: right;
+        }
+
+        .input-container button {
+            background-color: #007bff;
+            width: 100px;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Styles pour la pop-up */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+
+        #modal-content {
+            background-color: #fff;
+            margin: 30% auto;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1 id="titre">Ce week-end <br />je m'évade à ...</h1>
+    </div>
+
+    <div id="container">
+        
+        <div id="child-1">
+        <form id="destination-form">
+            <div class="input-container">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required />
+            </div>
+
+            <div class="input-container">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom"  data-cy="prenom" required />
+            </div>
+
+            <div class="input-container">
+                <label for="ville">Ville :</label>
+                <select id="ville" name="ville">
+                    <!-- Options du select -->
+                </select>
+            </div>
+
+            <div class="input-container">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="input-container">
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone">
+            </div>
+            <div class="input-container">
+                <button type="submit" data-cy="submit">Envoyer</button>
+            </div>
+        </form>
+        </div>
+        <div id="child-2">
+            <p>Exercice 1 : <br />Testez le formulaire avec au moins :
+            <ul>
+                <li>Un test permettant de remplir le formulaire correctement et de tester qu'on a le bon message</li>
+                <li>Un test où le formulaire n'est pas correctement rempli et de tester qu'on a le bon message d'erreur</li>
+            </ul>
+        </p>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div id="modal-content">
+            <p>Merci pour vos informations ! 🌟 Nous nous occupons de tout pour que vous puissiez vivre une expérience
+                inoubliable. 🌍 Votre prochaine destination de rêve sera bientôt prête. Restez à l'écoute ! 🗺️</p>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Récupérer le formulaire
+        const form = document.getElementById("destination-form");
+        // Récupérer la pop-up et le bouton de fermeture
+        const modal = document.getElementById("myModal");
+        const modalContent = document.getElementById("modal-content");
+        peuplerSelectAvecVilles();
+        mettreAJourTitre();
+
+        // Gérer la soumission du formulaire
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+
+            // Récupérer les valeurs des champs
+            const nom = document.getElementById("nom").value;
+            const prenom = document.getElementById("prenom").value;
+            const ville = document.getElementById("ville").value;
+            const email = document.getElementById("email").value;
+            const telephone = document.getElementById("telephone").value;
+
+            // Vérifier que soit l'email, soit le téléphone (ou les deux) sont remplis
+            if (!email && !telephone) {
+
+                modalContent.innerHTML = "Veuillez remplir au moins l'adresse email ou le numéro de téléphone."
+                modal.style.display = "block";
+                setTimeout(function () {
+                    modal.style.display = "none";
+                }, 5000);
+                return;
+            } else {
+                if (nom && prenom) {
+                    modal.style.display = "block";
+                    form.style.display = "none";
+                }
+            }
+        });
+    });
+
+    function trierParPopulationDecroissante(villes) {
+        return villes.sort((a, b) => b.population - a.population);
+    }
+
+    // Fonction pour peupler le select avec les villes triées par population décroissante
+    function peuplerSelectAvecVilles() {
+        const selectVilles = document.getElementById("ville"); // Remplacez "region" par l'ID de votre select
+
+        // URL de l'API de l'INSEE pour obtenir les données sur les communes
+        const apiUrl = "https://geo.api.gouv.fr/departements/59/communes?fields=nom,code,population&format=json&geometry=centre";
+
+        // Faire une requête GET à l'API
+        fetch(apiUrl)
+            .then((response) => response.json())
+            .then((data) => {
+                // Trier les données par population décroissante
+                const villesTrie = trierParPopulationDecroissante(data);
+
+                // Parcourir les données triées et ajouter chaque ville au select
+                villesTrie.forEach((ville) => {
+                    const option = document.createElement("option");
+                    option.value = ville.nom;
+                    option.textContent = ville.nom;
+                    selectVilles.appendChild(option);
+                });
+            })
+            .catch((error) => {
+                console.error("Erreur lors de la récupération des données :", error);
+            });
+    }
+    function mettreAJourTitre() {
+        const selectVilles = document.getElementById("ville"); // Remplacez "region" par l'ID de votre select
+        const titre = document.getElementById("titre"); // ID de votre titre
+
+        // Écouter l'événement "change" sur le select
+        selectVilles.addEventListener("change", function () {
+            // Obtenir la valeur sélectionnée (le nom de la ville)
+            const villeSelectionnee = selectVilles.value;
+
+            // Mettre à jour le titre avec la ville sélectionnée
+            titre.innerHTML = `Ce week-end <br />je m'évade à ${villeSelectionnee} !`;
+        });
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play with inputs</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Utilisation de la police Roboto pour le texte principal */
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            background-image: url('https://www.snexplores.org/wp-content/uploads/2023/10/1440_LL_MW_feat-1030x580.jpg');
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        h1, p {
+            color:#f2f2f2;
+        }
+        p {
+            text-align:justify;
+        }
+
+        #container {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 200px;
+        }
+       
+
+        #child-1 {
+            background-color: rgba(40, 40, 40, 0.7);
+            padding:10px;
+            border-radius: 8px;
+            margin-bottom:20px;
+        }
+
+        #destination-form { 
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .input-container {
+            text-align: right;
+            margin:12px 0 12px 0;
+            /* Aligner le texte à droite pour les champs de saisie et les éléments de sélection */
+        }
+
+        #destination-form label {
+            display: inline-block;
+            /* Faire en sorte que les labels occupent la largeur nécessaire */
+            width: 120px;
+            /* Définir une largeur fixe pour les labels (ajustez selon vos besoins) */
+            margin-right: 20px;
+            /* Ajouter une marge à droite pour séparer les labels des champs */
+        }
+
+        #destination-form .radio-inline,
+        #destination-form .checkbox-inline {
+            width: 90px;
+            margin: 0 0 0 5px;
+        }
+
+        /* Styles pour les champs de saisie */
+        .input-container input[type="text"],
+        .input-container input[type="email"],
+        .input-container input[type="tel"],
+        .input-container textarea {
+            width: 280px;
+            /* Définir la largeur à 100% pour remplir la largeur du conteneur */
+            padding: 10px;
+            /* Ajouter un espace intérieur pour une apparence améliorée */
+            margin-bottom: 10px;
+            /* Ajouter de l'espace entre les champs */
+            border: 1px solid #ccc;
+            /* Ajouter une bordure pour délimiter les champs */
+            border-radius: 5px;
+            /* Arrondir les coins */
+            font-size: 16px;
+            /* Définir la taille de police */
+            text-align: right;
+        }
+
+        .input-container select {
+            width: 300px;
+            /* Définir la largeur à 100% pour remplir la largeur du conteneur */
+            padding: 10px;
+            /* Ajouter un espace intérieur pour une apparence améliorée */
+            margin-bottom: 10px;
+            /* Ajouter de l'espace entre les champs */
+            border: 1px solid #ccc;
+            /* Ajouter une bordure pour délimiter les champs */
+            border-radius: 5px;
+            /* Arrondir les coins */
+            font-size: 16px;
+            /* Définir la taille de police */
+            text-align: right;
+        }
+
+        .input-container button {
+            background-color: #007bff;
+            width: 100px;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Styles pour la pop-up */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+
+        #modal-content {
+            background-color: #fff;
+            margin: 30% auto;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Bravo, tu es arrivé au bout de ce test</h1>
+        <div id="child-1">
+            
+            <p>Exercice 1 : <br />Faire un script cypress permettant de remplir tous les champs.<br />
+                                  La concaténation de tous les champs permet d'écrire le titre de cette page.</p>
+            <p>Exercice 2 : <br />à la suite de l'exercice 1, faite un script permettant de vérifier les valeurs des champs.</p>
+        </div>
+        <div id="child-2">
+            <form id="destination-form">
+                <div class="input-container">
+                    <label for="champs1">input :</label>
+                    <input data-cy="champs1" type="text" id="champs1" name="champs1" />
+                </div>
+                
+                <div class="input-container">
+                    <label for="textarea1">Textarea :</label>
+                    <textarea data-cy="textarea1" name="textarea1" rows="6" ></textarea>
+                </div>
+
+                <div class="input-container">
+                    <label for="select1">Select :</label>
+                    <select name="select1" data-cy="select1">
+                        <option value="1">privé</option>
+                        <option value="2">arrivé</option>
+                        <option value="3">mangé</option>
+                    </select>
+                </div>
+                
+
+                <div class="input-container">
+                    <label for="select-multiple1">select multiple :</label>
+                    <select name="select-multiple1" data-cy="select-multiple1" multiple>
+                        <option value="1">a</option>
+                        <option value="2">au</option>
+                        <option value="3">bout</option>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label>Radios :</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radios-inline" data-cy="radio-opt1" checked>
+                        <span>da</span>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radios-inline" data-cy="radio-opt2">
+                        <span>de</span>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radios-inline" data-cy="radio-opt3" disabled>
+                        <span>di</span>
+                    </label>
+                </div>
+
+                <div class="input-container">
+                    <label>Checkboxes :</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="checkboxes-inline" data-cy="check-opt1" checked>
+                        <span>:o</span>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="checkboxes-inline" data-cy="check-opt2">
+                        <span>ce</span>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="checkboxes-inline" data-cy="check-opt3">
+                        <span>test</span>
+                    </label>
+                </div>
+				
+				<div class="input-container">
+                    <label for="file1">Send file :</label>
+                    <input type="file"  name="file1" data-cy="file1" />
+                </div>
+				
+				
+                <div class="input-container">
+                    <button type="submit" data-cy="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
