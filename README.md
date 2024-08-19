@@ -1,5 +1,5 @@
-# cypress Exercices
-Exercices de test afin de s'exercer à la pratique de cypress
+# Exercices automatisation
+Exercices de test afin de s'exercer à la pratique de l'automatisation
 
 ## Problématique
 Beaucoup d'outils de test ne permettent pas de tester des fichiers présent en local sur la machine. Il est donc nécessaire de créer un server HTTP afin d'accéder au fichier.
